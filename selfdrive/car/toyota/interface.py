@@ -101,6 +101,8 @@ class CarInterface(CarInterfaceBase):
       ret.steerRatio = 13.7
       ret.tireStiffnessFactor = 0.7933
       ret.mass = 3400. * CV.LB_TO_KG  # mean between normal and hybrid
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.1]]
+      ret.lateralTuning.pid.kf = 0.00006
 
     elif candidate in (CAR.HIGHLANDER, CAR.HIGHLANDER_TSS2):
       # TODO: TSS-P models can do stop and go, but unclear if it requires sDSU or unplugging DSU
